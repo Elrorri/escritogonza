@@ -12,7 +12,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+#Crear una API que permita realizar Alta, baja, modificación, listado y búsqueda de Personas
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/personas', 'PersonasController@index');
+Route::get('/personas/{id}', 'PersonasController@show');
+Route::post('/personas', 'PersonasController@store');
+Route::put('/personas/{id}', 'PersonasController@update');
+Route::delete('/personas/{id}', 'PersonasController@destroy');
