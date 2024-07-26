@@ -13,7 +13,14 @@ class PersonasTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('personas', function (Blueprint $table) {
+            $table->id();
+            $table->integer('edad');#cambia el tipo de variable
+            $table->integer('telefono');#cambia el tipo de variable
+            $table->string('nombre', 50);
+            $table->string('apellido', 50);
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +30,6 @@ class PersonasTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('personas');
     }
 }
